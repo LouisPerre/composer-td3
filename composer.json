@@ -1,0 +1,32 @@
+{
+    "name": "louisperre/composer-td3",
+    "description": "Scrap the TMDB website to get all sort of data",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Louisperre\\ComposerTd3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Louis Perrenot",
+            "email": "louis.perrenot@edu.devinci.net"
+        }
+    ],
+    "require": {
+        "php": ">= 8.0",
+        "symfony/http-client": "^6.3",
+        "symfony/dom-crawler": "^6.3",
+        "symfony/css-selector": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6 || ^10.2",
+        "phpstan/phpstan": "^1.10",
+        "symfony/var-dumper": "^6.3"
+    },
+    "scripts": {
+        "phpstan": "@php vendor/bin/phpstan analyze src --level=max",
+        "test": "@php vendor/bin/phpunit --testdox tests"
+    }
+}
