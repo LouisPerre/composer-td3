@@ -15,6 +15,8 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class ApiTmdb
 {
     /**
+     * Return all the movies categories slug for the url construction
+     *
      * @throws TransportExceptionInterface
      * @throws \Exception
      * @return string[]
@@ -55,6 +57,8 @@ class ApiTmdb
     }
 
     /**
+     * Return all the movies categories name
+     *
      * @throws TransportExceptionInterface
      * @throws \Exception
      * @return string[]
@@ -89,6 +93,8 @@ class ApiTmdb
     }
 
     /**
+     * Return an array of 'object' containing all the movie in the category you provided
+     *
      * @throws TransportExceptionInterface
      * @return array<int, array<string, string>>
      */
@@ -128,6 +134,8 @@ class ApiTmdb
     }
 
     /**
+     * Return an array with all the information of a movie, you need to pass the TMDB url for that movie
+     *
      * @throws TransportExceptionInterface
      * @return string[]|null[]
      */
