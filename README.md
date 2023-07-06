@@ -10,17 +10,18 @@ Easily scrap the TMDB website
 
 **Work without any api key**
 
-- [Installation](#installation)
+- [Installation](#-installation-)
 - [Usage](#usage)
-- [Local development](#local-development)
-- [License](#license)
+- [How does that work](#-usage-)
+- [Local development](#-local-development-)
+- [License](#-license-)
 
-# Installation
+# 🔥 Installation 🔥
 ```
 composer require louisperre/composer-td3
 ```
 
-# Usage
+# ⚙️ Usage ⚙️
 ```php
 <?php
 
@@ -30,7 +31,30 @@ $api = new ApiTmdb();
 $categories = $api->getNameCategories() // array
 ```
 
-## Local development
+## ✨ How does that work ? ✨
+I use the **HttpClient** from **Symfony** to get the HTTP Code of TMDB :
+```php
+$client = HttpClient::create();
+$response = $client->request(
+    'GET',
+    'url'    
+);
+$content = $response->getContent();
+```
+After that I use the **Crawler** to find and loop over the content and get what I want :
+```php
+$crawler = new Crawler($content);
+$list = $crawler
+    ->filter('CSS SELECTOR')
+    ->reduce(function (Crawler $node, $i) use (&$array) : bool {
+        foreach ($node->filter('selector') as $something) {
+            // Do something
+        }
+    })
+```
+The `filter` function allow me to navigate inside the **HTML CODE** and the `reduce` one act as a callback function to do some logic to the result and the result I want.
+
+## 🔧 Local development 🔧
 
 ```bash
 # Install the dependencies
@@ -48,6 +72,6 @@ php vendor/bin/phpunit --testdox tests
 ```
 
 
-# License
+# 📝 License 📝
 
 Licensed under the terms of the MIT License.
