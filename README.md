@@ -11,8 +11,8 @@ Easily scrap the TMDB website
 **Work without any api key**
 
 - [Installation](#-installation-)
-- [Usage](#usage)
-- [How does that work](#-usage-)
+- [Usage](#-usage-)
+- [How does that work](#-how-does-that-work--)
 - [Local development](#-local-development-)
 - [License](#-license-)
 
